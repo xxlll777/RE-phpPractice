@@ -7,7 +7,7 @@
 <body>
 	
 
-	<form action="" method="post" enctype="application/x-www-form-urlencoded"></form>
+<form action="" method="post" enctype="application/x-www-form-urlencoded">
 <dl>
 	<dt>名前</dt>
 	<dd><input type="text" name="name"></dd>
@@ -20,7 +20,7 @@
 </dl>
 
 <input type="submit" value="確認">
-
+</form>
 
 </body>
 </html>
