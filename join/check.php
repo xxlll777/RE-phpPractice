@@ -19,7 +19,7 @@
 	<dd></dd>
 </dl>
 
-<a href="#">&laquo;&nbsp;戻る</a>
+<a href="index.php?action=rewrite">&laquo;&nbsp;戻る</a>
 
 <input type="submit" value="登録する">
 
