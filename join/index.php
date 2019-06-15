@@ -43,14 +43,27 @@ if(!empty($_POST)){
 	<dd>
 		<input type="text" name="name" value="<?php echo htmlspecialchars($_POST['name'],ENT_QUOTES); ?>">
 		<?php if ($error['name'] == 'blank'): ?>
-			<p class="error">ニックネームを入力してください</p>
+			<p class="error">*ニックネームを入力してください</p>
 		<?php endif; ?>
 	</dd>
 
 	<dt class="error">メールアドレス</dt>
-	<dd><input type="text" name="mail"></dd>
+	<dd><input type="text" name="mail" value="<?php echo htmlspecialchars($_POST['email'], ENT_QUOTES); ?>">
+	<?php if($error['email'] == 'blank'): ?>
+		<p class="error">*メールアドレスを入力してください</p>
+	<?php endif; ?>
+	</dd>
+
 	<dt>パスワード</dt>
-	<dd><input type="password" name="password"></dd>
+	<dd><input type="password" name="password" value="<?php echo htmlspecialchars($_POST['email'], ENT_QUOTES); ?>">
+		<?php if($error['password'] == 'blank'): ?>
+		<p class="error">*パスワードを入力してください</p>
+	<?php endif; ?>
+	<?php if($error['password'] == 'length'): ?>
+		<p class="error">*パスワードを4文字以上で入力してください</p>
+	<?php endif; ?>
+	</dd>
+	
 	<dt>写真のアップロード</dt>
 	<dd><input type="file" name="image"></dd>
 </dl>
