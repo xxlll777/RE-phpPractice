@@ -15,7 +15,7 @@ if(!empty($_POST)){
 	if($_POST['password'] == ''){
 		$error['password'] = 'blank';
 	}
-	
+
 
 	if(empty($error)){
 		$_SESSION['join'] = $_POST;
@@ -28,10 +28,11 @@ if(!empty($_POST)){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 	<meta charset="UTF-8">
 	<title>userLogin</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	
@@ -39,8 +40,14 @@ if(!empty($_POST)){
 <form action="" method="post" enctype="application/x-www-form-urlencoded">
 <dl>
 	<dt>名前</dt>
-	<dd><input type="text" name="name"></dd>
-	<dt>メールアドレス</dt>
+	<dd>
+		<input type="text" name="name" value="<?php echo htmlspecialchars($_POST['name'],ENT_QUOTES); ?>">
+		<?php if ($error['name'] == 'blank'): ?>
+			<p class="error">ニックネームを入力してください</p>
+		<?php endif; ?>
+	</dd>
+
+	<dt class="error">メールアドレス</dt>
 	<dd><input type="text" name="mail"></dd>
 	<dt>パスワード</dt>
 	<dd><input type="password" name="password"></dd>
