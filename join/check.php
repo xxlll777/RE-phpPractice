@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['join'])){
+	header('Location:index.php');
+	//別のファイルに移動させたい場合headerファンクションを使う
+	exit(); //メッセージを出力し、現在のスクリプトを終了する
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
