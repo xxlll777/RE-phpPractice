@@ -7,6 +7,11 @@ if(!isset($_SESSION['join'])){
 	exit(); //メッセージを出力し、現在のスクリプトを終了する
 }
 
+if($_REQUEST['action'] == 'rewrite'){
+	$_POST = $_SESSION['join'];
+	$error['rewrite'] = true;
+}
+
 ?>
 
 <!DOCTYPE html>
